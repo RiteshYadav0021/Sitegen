@@ -3,7 +3,7 @@ import { hyperspeedPresets } from './presets/hyperspeed.presets'
 
 const ContactBg = () => {
   return (
-    <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-[#050814]">
+    <div className="fixed inset-0 -z-50 pointer-events-none bg-[#050814]">
       <Hyperspeed
         effectOptions={{
           ...hyperspeedPresets.four,

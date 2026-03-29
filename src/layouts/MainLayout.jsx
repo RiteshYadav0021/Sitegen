@@ -19,18 +19,20 @@ const MainLayout = () => {
   }, [])
 
   return (
-    <main className="w-full h-screen relative overflow-hidden">
-      {/* BACKGROUND (ONE AT A TIME) */}
+    <main className="w-full min-h-screen relative">
+
+      {/* BACKGROUND */}
       {Background && enableBg && (
         <Suspense fallback={null}>
-          <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="fixed inset-0 -z-10 pointer-events-none">
             <Background />
           </div>
         </Suspense>
       )}
 
       {/* CONTENT */}
-      <div className="relative items-center z-10 h-full flex flex-col">
+      <div className="relative items-center z-10 flex flex-col min-h-screen">
+
         <PillNav
           logo="/logo.png"
           logoAlt="Company Logo"
@@ -42,9 +44,10 @@ const MainLayout = () => {
           ]}
         />
 
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1">
           <Outlet />
         </div>
+
       </div>
     </main>
   )
